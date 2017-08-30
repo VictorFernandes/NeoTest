@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.voidcorp.neon.viewmodel.HistoryViewModel"/>
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/history_scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/size_01x"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/history_graph"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_40x"
+                app:barData="@{model.graphData}"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/contacts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_42x"
+                android:orientation="vertical"
+                app:items="@{model.contacts}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

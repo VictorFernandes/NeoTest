@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.voidcorp.neon.model.Contact"/>
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_13x"
+        android:background="?selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_01x">
+
+            <ImageView
+                android:id="@+id/contact_photo"
+                android:layout_width="@dimen/size_10x"
+                android:layout_height="@dimen/size_10x"
+                app:url="@{model.image}"/>
+
+            <TextView
+                android:id="@+id/contact_name"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/size_01x"
+                android:layout_toEndOf="@+id/contact_photo"
+                android:text="@{model.name}"
+                android:textColor="@color/mine_shaft"
+                tools:text="Victor Fernandes"/>
+
+            <TextView
+                android:id="@+id/contact_phone"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/contact_name"
+                android:layout_below="@+id/contact_name"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_01x"
+                android:text="@{model.phone}"
+                android:textColor="@color/mine_shaft"
+                tools:text="(11) 94959-4228"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="@color/alabaster_60"
+            app:fade="@{model.transferStatus == model.TRANSFERRING}">
+
+            <ProgressBar
+                android:layout_width="@dimen/size_05x"
+                android:layout_height="@dimen/size_05x"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="@color/persian_green_60"
+            android:gravity="center"
+            android:text="@string/done"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_05x"
+            android:textStyle="bold"
+            app:fade="@{model.transferStatus == model.TRANSFERRED}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:alpha="0"
+            android:gravity="end"
+            android:padding="@dimen/size_01x"
+            android:text="@string/error_send"
+            android:textColor="@color/crimson_red"
+            android:textSize="@dimen/font_02x"
+            app:fade="@{model.transferStatus == model.ERROR}"/>
+
+    </FrameLayout>
+
+</layout>

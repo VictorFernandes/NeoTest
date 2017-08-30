@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="persian_green">#009688</color>
+    <color name="persian_green_60">#99009688</color>
+    <color name="pine_green">#00796B</color>
+    <color name="aqua_island">#B2DFDB</color>
+    <color name="dodger_blue">#536DFE</color>
+    <color name="mine_shaft">#212121</color>
+    <color name="boulder">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="silver">#BDBDBD</color>
+    <color name="alabaster">#FCFBF9</color>
+    <color name="alabaster_60">#99FCFBF9</color>
+    <color name="crimson_red">#990000</color>
+</resources>

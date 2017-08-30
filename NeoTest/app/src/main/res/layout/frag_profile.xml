@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.voidcorp.neon.viewmodel.ProfileViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_10x"
+            android:layout_height="@dimen/size_10x"
+            app:url="@{model.image}"/>
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_04x"
+            android:gravity="center"
+            android:text="@{model.name}"/>
+
+        <TextView
+            style="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_02x"
+            android:gravity="center"
+            android:text="@{model.email}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_02x"
+            android:autoLink="all"
+            android:gravity="center"
+            android:text="@{model.linkedIn}"/>
+
+    </LinearLayout>
+
+</layout>

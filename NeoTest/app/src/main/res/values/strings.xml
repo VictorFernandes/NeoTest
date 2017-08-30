@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Neon</string>
+    <string name="title_activity_act_transfer_to">Transfer to</string>
+    <string name="title_activity_act_main">Neon</string>
+    <string name="profile">Perfil</string>
+    <string name="send">Enviar</string>
+    <string name="history">Histórico</string>
+    <string name="amount">Valor</string>
+    <string name="done">Enviado</string>
+    <string name="error_send">Falha na transação</string>
+</resources>
